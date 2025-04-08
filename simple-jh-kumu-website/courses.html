@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JH KUMU EDTECH - English Learning Courses in India">
+    <title>Courses - JH KUMU EDTECH</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">JH KUMU EDTECH</a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html" class="active">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Courses Header -->
+    <section class="page-header" style="background: linear-gradient(to right, #3b82f6, #4f46e5);">
+        <div class="container">
+            <h1>Our English Courses</h1>
+            <p>Explore our range of English language courses designed to help Indian students improve their fluency and confidence.</p>
+        </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section class="filters">
+        <div class="container">
+            <div class="filters-content">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search courses...">
+                </div>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label>Level:</label>
+                        <select id="level-filter">
+                            <option value="all">All Levels</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Category:</label>
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="speaking">Speaking</option>
+                            <option value="grammar">Grammar</option>
+                            <option value="business">Business English</option>
+                            <option value="exam">Exam Preparation</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Courses -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="courses-grid" id="courses-container">
+                <!-- Course 1 -->
+                <div class="course-card" data-level="intermediate" data-category="speaking">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1546953304-5d96f43c2e94?auto=format&q=75&fit=crop&w=800" alt="Professional English Speaking">
+                    </div>
+                    <div class="course-content">
+                        <h3>Professional English Speaking</h3>
+                        <p>Master fluent English speech with confidence for professional settings.</p>
+                        <div class="course-meta">
+                            <span>3 months</span>
+                            <span>Intermediate</span>
+                            <span class="rating">4.8 ★</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">₹4,999</span>
+                            <div class="course-actions">
+                                <a href="contact.html" class="btn btn-primary btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card" data-level="advanced" data-category="business">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&q=75&fit=crop&w=800" alt="Business English Communication">
+                    </div>
+                    <div class="course-content">
+                        <h3>Business English Communication</h3>
+                        <p>Learn how to write effective emails, reports and presentations in English.</p>
+                        <div class="course-meta">
+                            <span>4 months</span>
+                            <span>Advanced</span>
+                            <span class="rating">4.9 ★</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">₹5,999</span>
+                            <div class="course-actions">
+                                <a href="contact.html" class="btn btn-primary btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card" data-level="beginner" data-category="grammar">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&q=75&fit=crop&w=800" alt="English for Beginners">
+                    </div>
+                    <div class="course-content">
+                        <h3>English for Beginners</h3>
+                        <p>Build a strong foundation in English grammar, vocabulary and pronunciation.</p>
+                        <div class="course-meta">
+                            <span>3 months</span>
+                            <span>Beginner</span>
+                            <span class="rating">4.7 ★</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">₹3,999</span>
+                            <div class="course-actions">
+                                <a href="contact.html" class="btn btn-primary btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card" data-level="intermediate" data-category="exam">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1560785496-3c9d27877182?auto=format&q=75&fit=crop&w=800" alt="IELTS Preparation">
+                    </div>
+                    <div class="course-content">
+                        <h3>IELTS Preparation</h3>
+                        <p>Comprehensive preparation for the IELTS exam with focus on all four modules.</p>
+                        <div class="course-meta">
+                            <span>2 months</span>
+                            <span>Intermediate</span>
+                            <span class="rating">4.9 ★</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">₹6,999</span>
+                            <div class="course-actions">
+                                <a href="contact.html" class="btn btn-primary btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="course-card" data-level="all" data-category="grammar">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&q=75&fit=crop&w=800" alt="Grammar Mastery">
+                    </div>
+                    <div class="course-content">
+                        <h3>Grammar Mastery</h3>
+                        <p>Perfect your English grammar with comprehensive lessons and practice exercises.</p>
+                        <div class="course-meta">
+                            <span>2 months</span>
+                            <span>All Levels</span>
+                            <span class="rating">4.6 ★</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">₹3,499</span>
+                            <div class="course-actions">
+                                <a href="contact.html" class="btn btn-primary btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="course-card" data-level="intermediate" data-category="business">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1581089781785-603411fa4444?auto=format&q=75&fit=crop&w=800" alt="English for IT Professionals">
+                    </div>
+                    <div class="course-content">
+                        <h3>English for IT Professionals</h3>
+                        <p>Specialized English course for IT professionals focusing on technical vocabulary and communication.</p>
+                        <div class="course-meta">
+                            <span>3 months</span>
+                            <span>Intermediate</span>
+                            <span class="rating">4.8 ★</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="price">₹5,499</span>
+                            <div class="course-actions">
+                                <a href="contact.html" class="btn btn-primary btn-sm">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Courses Found Message -->
+            <div id="no-courses" class="no-courses" style="display: none;">
+                <h3>No courses found</h3>
+                <p>Try adjusting your search or filters</p>
+                <button id="reset-filters" class="btn btn-primary">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="enquiry-cta">
+        <div class="container">
+            <div class="section-header">
+                <h2>Need More Information?</h2>
+                <p>For detailed course information, custom course requirements or scholarship options, please get in touch with our team.</p>
+            </div>
+            <div class="text-center">
+                <a href="contact.html" class="btn btn-primary">Contact Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-company">
+                    <h3>JH KUMU EDTECH PVT LTD</h3>
+                    <p>Helping Indian students improve their English language skills with professional courses and personalized support.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>
+                            <span class="icon">📞</span>
+                            <a href="tel:+918521569961">8521569961</a>
+                        </li>
+                        <li>
+                            <span class="icon">✉️</span>
+                            <a href="mailto:jumbalzonecbsa@gmail.com">jumbalzonecbsa@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="icon">📍</span>
+                            <span>House no.61, Elligara, Siringsia, Jharkhand</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year"></span> JH KUMU EDTECH PVT LTD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const levelFilter = document.getElementById('level-filter');
+            const categoryFilter = document.getElementById('category-filter');
+            const coursesContainer = document.getElementById('courses-container');
+            const courseCards = document.querySelectorAll('.course-card');
+            const noCoursesMessage = document.getElementById('no-courses');
+            const resetBtn = document.getElementById('reset-filters');
+
+            // Filter courses function
+            function filterCourses() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const level = levelFilter.value;
+                const category = categoryFilter.value;
+
+                let visibleCount = 0;
+
+                courseCards.forEach(card => {
+                    const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+                    const cardDesc = card.querySelector('p').textContent.toLowerCase();
+                    const cardLevel = card.getAttribute('data-level');
+                    const cardCategory = card.getAttribute('data-category');
+
+                    const matchesSearch = cardTitle.includes(searchTerm) || cardDesc.includes(searchTerm);
+                    const matchesLevel = level === 'all' || cardLevel === level || cardLevel === 'all';
+                    const matchesCategory = category === 'all' || cardCategory === category;
+
+                    if (matchesSearch && matchesLevel && matchesCategory) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show/hide no courses message
+                if (visibleCount === 0) {
+                    noCoursesMessage.style.display = 'block';
+                } else {
+                    noCoursesMessage.style.display = 'none';
+                }
+            }
+
+            // Add event listeners
+            searchInput.addEventListener('input', filterCourses);
+            levelFilter.addEventListener('change', filterCourses);
+            categoryFilter.addEventListener('change', filterCourses);
+
+            // Reset filters
+            resetBtn.addEventListener('click', function() {
+                searchInput.value = '';
+                levelFilter.value = 'all';
+                categoryFilter.value = 'all';
+                filterCourses();
+            });
+        });
+    </script>
+</body>
+</html>

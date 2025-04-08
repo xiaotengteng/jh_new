@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business English Communication Course Curriculum - JH KUMU EDTECH">
+    <title>Business English Communication - JH KUMU EDTECH</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .curriculum-section {
+            padding: 3rem 0;
+            background-color: var(--light-gray);
+        }
+
+        .curriculum-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .curriculum-content {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .course-sidebar {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .course-sidebar-content {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .course-info {
+            margin-bottom: 2rem;
+        }
+
+        .course-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-info-icon {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .curriculum-header {
+            margin-bottom: 2rem;
+        }
+
+        .curriculum-header h1 {
+            color: var(--text-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-description {
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .key-highlights {
+            margin-bottom: 3rem;
+        }
+
+        .key-highlights h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .highlight-icon {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .module-section {
+            margin-bottom: 3rem;
+        }
+
+        .module-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .module-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .modules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .module-item {
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .module-header {
+            padding: 1.25rem;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
+        .module-content {
+            padding: 1.25rem;
+            display: none;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .module-content.active {
+            display: block;
+        }
+
+        .module-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .module-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .module-content li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            margin-left: -1rem;
+        }
+
+        .instructor-section {
+            margin-top: 3rem;
+            border-top: 1px solid var(--medium-gray);
+            padding-top: 2rem;
+        }
+
+        .instructor-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .instructor-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .instructor-image {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .instructor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .instructor-bio h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .instructor-position {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .instructor-description {
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        @media (min-width: 768px) {
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .curriculum-container {
+                grid-template-columns: 3fr 1fr;
+            }
+
+            .curriculum-content {
+                order: 1;
+            }
+
+            .course-sidebar {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">JH KUMU EDTECH</a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../courses.html" class="active">Courses</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-end">
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../courses.html" class="active">Courses</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Course Banner -->
+    <section class="page-header" style="background: linear-gradient(to right, #3b82f6, #4f46e5);">
+        <div class="container">
+            <h1>Business English Communication</h1>
+            <p>Learn how to write effective emails, reports and presentations in English</p>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum-section">
+        <div class="container">
+            <div class="curriculum-container">
+                <!-- Main Content -->
+                <div class="curriculum-content">
+                    <div class="curriculum-header">
+                        <h1>Course Curriculum</h1>
+                        <p class="course-description">
+                            Our Business English Communication course is specially designed for Indian professionals who need to communicate effectively in international business settings. This comprehensive 4-month program covers all aspects of written and verbal business communication, with a focus on practical applications relevant to today's corporate environment.
+                        </p>
+                    </div>
+
+                    <!-- Key Highlights -->
+                    <div class="key-highlights">
+                        <h2>Key Highlights</h2>
+                        <div class="highlights-grid">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">📧</div>
+                                <div>
+                                    <h3>Business Email Writing</h3>
+                                    <p>Master formal email etiquette and structure</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">📊</div>
+                                <div>
+                                    <h3>Report Writing</h3>
+                                    <p>Learn to create clear, concise business reports</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">📝</div>
+                                <div>
+                                    <h3>Business Documentation</h3>
+                                    <p>Create professional proposals and documents</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🤝</div>
+                                <div>
+                                    <h3>Meeting Skills</h3>
+                                    <p>Effectively contribute and lead business meetings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module Breakdown -->
+                    <div class="module-section">
+                        <h2>Module Breakdown</h2>
+                        <div class="modules-list">
+                            <!-- Module 1 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 1: Business Communication Essentials</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>This module covers the fundamentals of business communication and common English errors made by Indian professionals.</p>
+                                    <ul>
+                                        <li>Understanding different forms of business communication</li>
+                                        <li>Formal vs. informal language in business contexts</li>
+                                        <li>Common grammar and usage errors in business English</li>
+                                        <li>Cultural nuances in international business communication</li>
+                                        <li>Business vocabulary and terminology</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Communication style analysis, error correction exercises, business vocabulary building</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 2 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 2: Professional Email Communication</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Master the art of effective email communication in business settings.</p>
+                                    <ul>
+                                        <li>Structuring professional emails</li>
+                                        <li>Subject lines that get responses</li>
+                                        <li>Email etiquette and protocols</li>
+                                        <li>Writing clear and concise messages</li>
+                                        <li>Email templates for different business situations</li>
+                                        <li>Follow-up emails and maintaining communication chains</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Email drafting exercises, case studies, response analysis</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 3 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 3: Business Reports and Documentation</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Learn to create professional business documents and reports.</p>
+                                    <ul>
+                                        <li>Types of business reports and their structures</li>
+                                        <li>Executive summaries and abstracts</li>
+                                        <li>Data presentation and analysis in reports</li>
+                                        <li>Creating project proposals</li>
+                                        <li>Business case studies and white papers</li>
+                                        <li>Proofreading and editing techniques</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Report writing practice, proposal drafting, peer review sessions</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 4 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 4: Presentation Skills for Business</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Develop skills to create and deliver impactful business presentations.</p>
+                                    <ul>
+                                        <li>Planning and structuring business presentations</li>
+                                        <li>Creating compelling slide decks</li>
+                                        <li>Data visualization techniques</li>
+                                        <li>Storytelling in business contexts</li>
+                                        <li>Handling Q&A sessions professionally</li>
+                                        <li>Virtual presentation skills</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Presentation development, delivery practice, recorded feedback sessions</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 5 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 5: Meeting Management</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Learn to participate in and lead effective business meetings.</p>
+                                    <ul>
+                                        <li>Setting up meeting agendas</li>
+                                        <li>Running productive meetings</li>
+                                        <li>Taking comprehensive minutes</li>
+                                        <li>Participating effectively in discussions</li>
+                                        <li>Managing conflicts in meetings</li>
+                                        <li>Virtual meeting protocols</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Meeting simulations, role-playing exercises, agenda creation</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 6 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 6: Negotiation and Persuasive Communication</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Develop skills for effective negotiation and persuasion in business settings.</p>
+                                    <ul>
+                                        <li>Persuasive language techniques</li>
+                                        <li>Negotiation strategies and vocabulary</li>
+                                        <li>Building compelling arguments</li>
+                                        <li>Handling objections professionally</li>
+                                        <li>Cross-cultural negotiation approaches</li>
+                                        <li>Win-win communication frameworks</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Negotiation role plays, persuasive writing exercises, case study analyses</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 7 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 7: Client Communication</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Master the art of effective client communication.</p>
+                                    <ul>
+                                        <li>Understanding client needs and expectations</li>
+                                        <li>Managing client relationships</li>
+                                        <li>Handling difficult client situations</li>
+                                        <li>Creating client proposals and reports</li>
+                                        <li>Setting and managing expectations</li>
+                                        <li>Following up with clients</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Client scenario role plays, proposal writing, feedback handling practice</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 8 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 8: Capstone Project</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Apply all your learning in a comprehensive business communication project.</p>
+                                    <ul>
+                                        <li>Developing a business proposal</li>
+                                        <li>Creating supporting documentation</li>
+                                        <li>Preparing and delivering a business presentation</li>
+                                        <li>Handling Q&A and feedback</li>
+                                        <li>Follow-up communication</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Integrated business communication project with personalized feedback</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Assessment and Certification -->
+                    <div class="module-section">
+                        <h2>Assessment and Certification</h2>
+                        <p>Your progress will be assessed throughout the course through:</p>
+                        <ul>
+                            <li>Weekly writing assignments</li>
+                            <li>Business document creation exercises</li>
+                            <li>Presentation evaluations</li>
+                            <li>Meeting participation and leadership</li>
+                            <li>Final capstone project</li>
+                        </ul>
+                        <p>Upon successful completion, you will receive a certificate of completion from JH KUMU EDTECH, with a detailed assessment of your business communication skills.</p>
+                    </div>
+
+                    <!-- Instructor Section -->
+                    <div class="instructor-section">
+                        <h2>Meet Your Instructor</h2>
+                        <div class="instructor-card">
+                            <div class="instructor-image">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&q=75&fit=crop&w=500" alt="Anil Patil">
+                            </div>
+                            <div class="instructor-bio">
+                                <h3>Anil Patil</h3>
+                                <p class="instructor-position">Business Communication Specialist</p>
+                                <p class="instructor-description">
+                                    Anil has over 15 years of experience in business communication training and corporate consulting. He has worked with major multinational companies to improve their communication standards and has trained thousands of professionals in effective business writing and speaking. Anil holds an MBA from a prestigious institute and specializes in helping Indian professionals communicate confidently in international business environments.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="course-sidebar">
+                    <div class="course-sidebar-content">
+                        <div class="course-info">
+                            <h2>Course Details</h2>
+                            <div class="course-info-item">
+                                <div class="course-info-icon">⏱️</div>
+                                <div>
+                                    <strong>Duration</strong>
+                                    <p>4 months</p>
+                                </div>
+                            </div>
+                            <div class="course-info-item">
+                                <div class="course-info-icon">🧩</div>
+                                <div>
+                                    <strong>Level</strong>
+                                    <p>Advanced</p>
+                                </div>
+                            </div>
+                            <div class="course-info-item">
+                                <div class="course-info-icon">👥</div>
+                                <div>
+                                    <strong>Batch Size</strong>
+                                    <p>Maximum 12 students</p>
+                                </div>
+                            </div>
+                            <div class="course-info-item">
+                                <div class="course-info-icon">🗓️</div>
+                                <div>
+                                    <strong>Schedule</strong>
+                                    <p>Weekday & Weekend options</p>
+                                </div>
+                            </div>
+                            <div class="course-info-item">
+                                <div class="course-info-icon">💰</div>
+                                <div>
+                                    <strong>Fee</strong>
+                                    <p>₹5,999</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <h3>Need More Information?</h3>
+                            <p>Contact our counselors for detailed syllabus information or schedule a demo class.</p>
+                            <a href="../contact.html" class="btn btn-primary btn-full" style="margin-top: 1rem;">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-company">
+                    <h3>JH KUMU EDTECH PVT LTD</h3>
+                    <p>Helping Indian students improve their English language skills with professional courses and personalized support.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../courses.html">Courses</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>
+                            <span class="icon">📞</span>
+                            <a href="tel:+918521569961">8521569961</a>
+                        </li>
+                        <li>
+                            <span class="icon">✉️</span>
+                            <a href="mailto:jumbalzonecbsa@gmail.com">jumbalzonecbsa@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="icon">📍</span>
+                            <span>House no.61, Elligara, Siringsia, Jharkhand</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year"></span> JH KUMU EDTECH PVT LTD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleModule(element) {
+            const moduleContent = element.nextElementSibling;
+            const toggleIcon = element.querySelector('.toggle-icon');
+
+            if (moduleContent.classList.contains('active')) {
+                moduleContent.classList.remove('active');
+                toggleIcon.textContent = '+';
+            } else {
+                moduleContent.classList.add('active');
+                toggleIcon.textContent = '−';
+            }
+        }
+    </script>
+</body>
+</html>

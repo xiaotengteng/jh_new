@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional English Speaking Course Curriculum - JH KUMU EDTECH">
+    <title>Professional English Speaking - JH KUMU EDTECH</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .curriculum-section {
+            padding: 3rem 0;
+            background-color: var(--light-gray);
+        }
+
+        .curriculum-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .curriculum-content {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .course-sidebar {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .course-sidebar-content {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .course-info {
+            margin-bottom: 2rem;
+        }
+
+        .course-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-info-icon {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .curriculum-header {
+            margin-bottom: 2rem;
+        }
+
+        .curriculum-header h1 {
+            color: var(--text-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-description {
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .key-highlights {
+            margin-bottom: 3rem;
+        }
+
+        .key-highlights h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .highlight-icon {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .module-section {
+            margin-bottom: 3rem;
+        }
+
+        .module-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .module-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .modules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .module-item {
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .module-header {
+            padding: 1.25rem;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
+        .module-content {
+            padding: 1.25rem;
+            display: none;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .module-content.active {
+            display: block;
+        }
+
+        .module-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .module-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .module-content li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            margin-left: -1rem;
+        }
+
+        .instructor-section {
+            margin-top: 3rem;
+            border-top: 1px solid var(--medium-gray);
+            padding-top: 2rem;
+        }
+
+        .instructor-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .instructor-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .instructor-image {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .instructor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .instructor-bio h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .instructor-position {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .instructor-description {
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        @media (min-width: 768px) {
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .curriculum-container {
+                grid-template-columns: 3fr 1fr;
+            }
+
+            .curriculum-content {
+                order: 1;
+            }
+
+            .course-sidebar {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">JH KUMU EDTECH</a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../courses.html" class="active">Courses</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-end">
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../courses.html" class="active">Courses</a></li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Course Banner -->
+    <section class="page-header" style="background: linear-gradient(to right, #3b82f6, #4f46e5);">
+        <div class="container">
+            <h1>Professional English Speaking</h1>
+            <p>Master fluent English speech with confidence for professional settings</p>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum-section">
+        <div class="container">
+            <div class="curriculum-container">
+                <!-- Main Content -->
+                <div class="curriculum-content">
+                    <div class="curriculum-header">
+                        <h1>Course Curriculum</h1>
+                        <p class="course-description">
+                            Our Professional English Speaking course is designed to help you communicate confidently in professional contexts. This comprehensive 3-month program will transform your speaking abilities through practical exercises, real-world simulations, and personalized feedback from experienced instructors.
+                        </p>
+                    </div>
+
+                    <!-- Key Highlights -->
+                    <div class="key-highlights">
+                        <h2>Key Highlights</h2>
+                        <div class="highlights-grid">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🎯</div>
+                                <div>
+                                    <h3>Industry-Specific Vocabulary</h3>
+                                    <p>Build vocabulary relevant to your professional field</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🗣️</div>
+                                <div>
+                                    <h3>Presentation Skills</h3>
+                                    <p>Learn techniques for delivering impactful presentations</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🤝</div>
+                                <div>
+                                    <h3>Interview Preparation</h3>
+                                    <p>Mock interviews and feedback sessions</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">📱</div>
+                                <div>
+                                    <h3>Digital Communication</h3>
+                                    <p>Master virtual meetings and online presentations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module Breakdown -->
+                    <div class="module-section">
+                        <h2>Module Breakdown</h2>
+                        <div class="modules-list">
+                            <!-- Module 1 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 1: Foundation of Professional English</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>This module establishes the core skills needed for professional English communication.</p>
+                                    <ul>
+                                        <li>Assessment of current speaking abilities</li>
+                                        <li>Identifying common pronunciation challenges for Indian speakers</li>
+                                        <li>Introduction to stress, intonation, and rhythm in English</li>
+                                        <li>Building professional vocabulary</li>
+                                        <li>Understanding formal vs. informal language</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Pronunciation drills, vocabulary building exercises, self-introduction in professional contexts</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 2 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 2: Conversational Fluency</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Focus on developing natural conversation skills for workplace contexts.</p>
+                                    <ul>
+                                        <li>Techniques for maintaining conversations</li>
+                                        <li>Active listening strategies</li>
+                                        <li>Asking effective questions</li>
+                                        <li>Small talk for networking events</li>
+                                        <li>Navigating difficult conversations</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Role-playing workplace scenarios, networking simulations, impromptu speaking exercises</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 3 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 3: Presentation Skills</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Learn to deliver impactful presentations with confidence.</p>
+                                    <ul>
+                                        <li>Structure and organization of effective presentations</li>
+                                        <li>Visual aids and presentation tools</li>
+                                        <li>Audience engagement techniques</li>
+                                        <li>Handling Q&A sessions</li>
+                                        <li>Body language and stage presence</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Mini-presentations with feedback, presentation structure exercises, impromptu speaking challenges</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 4 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 4: Interview Excellence</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Master the art of job interviews in English.</p>
+                                    <ul>
+                                        <li>Common interview questions and effective responses</li>
+                                        <li>Talking about your skills and experiences</li>
+                                        <li>Asking intelligent questions to interviewers</li>
+                                        <li>Virtual interview techniques</li>
+                                        <li>Salary negotiation language</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Mock interviews, self-assessment videos, targeted feedback sessions</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 5 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 5: Digital Communication</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Develop skills for effective online communication.</p>
+                                    <ul>
+                                        <li>Virtual meeting etiquette and protocols</li>
+                                        <li>Online presentation delivery</li>
+                                        <li>Clear communication in video calls</li>
+                                        <li>Overcoming technical challenges</li>
+                                        <li>Building rapport in virtual settings</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Virtual meeting simulations, online presentation practice, technical troubleshooting scenarios</p>
+                                </div>
+                            </div>
+
+                            <!-- Module 6 -->
+                            <div class="module-item">
+                                <div class="module-header" onclick="toggleModule(this)">
+                                    <span>Module 6: Industry-Specific Communication</span>
+                                    <span class="toggle-icon">+</span>
+                                </div>
+                                <div class="module-content">
+                                    <p>Tailored language practice for your professional field.</p>
+                                    <ul>
+                                        <li>Industry-specific vocabulary and terminologies</li>
+                                        <li>Case studies from relevant sectors</li>
+                                        <li>Specialized communication scenarios</li>
+                                        <li>Networking within your industry</li>
+                                        <li>Professional growth language</li>
+                                    </ul>
+                                    <p><strong>Activities:</strong> Industry-specific role plays, specialized vocabulary building, case discussions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Assessment and Certification -->
+                    <div class="module-section">
+                        <h2>Assessment and Certification</h2>
+                        <p>Your progress will be assessed throughout the course through:</p>
+                        <ul>
+                            <li>Regular speaking assessments</li>
+                            <li>Recorded presentations</li>
+                            <li>Mock interviews and feedback</li>
+                            <li>Participation in group discussions</li>
+                            <li>Final comprehensive assessment</li>
+                        </ul>
+                        <p>Upon successful completion, you will receive a certificate of completion from JH KUMU EDTECH.</p>
+                    </div>
+
+                    <!-- Instructor Section -->
+                    <div class="instructor-section">
+                        <h2>Meet Your Instructor</h2>
+                        <div class="instructor-card">
+                            <div class="instructor-image">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&q=75&fit=crop&w=500" alt="Priya Kapoor">
+                            </div>
+                            <div class="instructor-bio">
+                                <h3>Priya Kapoor</h3>
+                                <p class="instructor-position">Senior English Communication Specialist</p>
+                                <p class="instructor-description">
+                                    Priya has over 12 years of experience teaching professional English communication skills. She specializes in helping Indian professionals overcome common pronunciation challenges and develop confidence in speaking English in professional contexts. Priya holds a Masters in English Language Teaching and has trained professionals from various multinational companies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="course-sidebar">
+                    <div class="course-sidebar-content">
+                        <div class="course-info">
+                            <h2>Course Details</h2>
+                            <div class="course-info-item">
+                                <div class="course-info-icon">⏱️</div>
+                                <div>
+                                    <strong>Duration</strong>
+                                    <p>3 months</p>
+                                </div>
+                            </div>
+                            <div class="course-info-item">
+                                <div class="course-info-icon">🧩</div>
+                                <div>
+                                    <strong>Level</strong>
+                                    <p>Intermediate</p>
+                                </div>
+                            </div>
+                            <div class="course-info-item">
+                                <div class="course-info-icon">👥</div>
+                                <div>
+                                    <strong>Batch Size</strong>
+                                    <p>Maximum 15 students</p>
+                                </div>
+                            </div>
+                            <div class="course-info-item">
+                                <div class="course-info-icon">🗓️</div>
+                                <div>
+                                    <strong>Schedule</strong>
+                                    <p>Weekday & Weekend options</p>
+                                </div>
+                            </div>
+                            <div class="course-info-item">
+                                <div class="course-info-icon">💰</div>
+                                <div>
+                                    <strong>Fee</strong>
+                                    <p>₹4,999</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info">
+                            <h3>Need More Information?</h3>
+                            <p>Contact our counselors for detailed syllabus information or schedule a demo class.</p>
+                            <a href="../contact.html" class="btn btn-primary btn-full" style="margin-top: 1rem;">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-company">
+                    <h3>JH KUMU EDTECH PVT LTD</h3>
+                    <p>Helping Indian students improve their English language skills with professional courses and personalized support.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../courses.html">Courses</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>
+                            <span class="icon">📞</span>
+                            <a href="tel:+918521569961">8521569961</a>
+                        </li>
+                        <li>
+                            <span class="icon">✉️</span>
+                            <a href="mailto:jumbalzonecbsa@gmail.com">jumbalzonecbsa@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="icon">📍</span>
+                            <span>House no.61, Elligara, Siringsia, Jharkhand</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year"></span> JH KUMU EDTECH PVT LTD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        function toggleModule(element) {
+            const moduleContent = element.nextElementSibling;
+            const toggleIcon = element.querySelector('.toggle-icon');
+
+            if (moduleContent.classList.contains('active')) {
+                moduleContent.classList.remove('active');
+                toggleIcon.textContent = '+';
+            } else {
+                moduleContent.classList.add('active');
+                toggleIcon.textContent = '−';
+            }
+        }
+    </script>
+</body>
+</html>
