@@ -21,8 +21,8 @@ const Contact = () => {
     {
       icon: FiMapPin,
       title: 'Address',
-      details: 'House no.61, Elligara, Siringsia, Jharkhand',
-      url: 'https://maps.google.com/?q=Elligara,+Siringsia,+Jharkhand',
+      details: 'tungri ,Nehru chowk Birua path,chaibasa jharkhand',
+      url: 'https://maps.google.com/?q=chaibasa,+Jharkhand',
     },
     {
       icon: FiClock,
